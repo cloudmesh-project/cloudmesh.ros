@@ -1,0 +1,8 @@
+---
+#- name: add the catkin tools repo
+#  become: true
+#  apt_repository: repo='deb http://packages.ros.org/ros/ubuntu xenial main' state=present
+
+- name: install catkin tools
+  become: true
+  apt: pkg=python-catkin-tools state=present
