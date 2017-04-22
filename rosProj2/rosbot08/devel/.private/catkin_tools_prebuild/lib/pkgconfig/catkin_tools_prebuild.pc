@@ -1,0 +1,8 @@
+prefix=/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/catkin_tools_prebuild
+
+Name: catkin_tools_prebuild
+Description: Description of catkin_tools_prebuild
+Version: 0.0.0
+Cflags: 
+Libs: -L/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/catkin_tools_prebuild/lib 
+Requires: 

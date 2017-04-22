@@ -1,0 +1,8 @@
+prefix=/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description
+
+Name: mybot_description
+Description: Description of mybot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description/lib 
+Requires: 

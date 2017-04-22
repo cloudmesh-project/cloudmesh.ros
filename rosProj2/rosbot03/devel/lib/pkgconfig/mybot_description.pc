@@ -1,0 +1,1 @@
+/home/eunosm3/rosProject/rosProj2/rosbot03/devel/.private/mybot_description/lib/pkgconfig/mybot_description.pc

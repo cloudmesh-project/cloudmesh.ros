@@ -1,0 +1,8 @@
+prefix=/home/eunosm3/rosProject/rosProj2/rosbot03/install
+
+Name: mybot_gazebo
+Description: Description of mybot_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/eunosm3/rosProject/rosProj2/rosbot03/install/lib 
+Requires: 

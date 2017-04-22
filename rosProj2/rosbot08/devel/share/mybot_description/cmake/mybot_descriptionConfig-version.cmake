@@ -1,0 +1,1 @@
+/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description/share/mybot_description/cmake/mybot_descriptionConfig-version.cmake
