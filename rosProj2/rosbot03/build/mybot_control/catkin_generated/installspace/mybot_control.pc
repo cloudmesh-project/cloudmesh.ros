@@ -1,8 +1,0 @@
-prefix=/home/eunosm3/rosProject/rosProj2/rosbot03/install
-
-Name: mybot_control
-Description: Description of mybot_control
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/eunosm3/rosProject/rosProj2/rosbot03/install/lib 
-Requires: 

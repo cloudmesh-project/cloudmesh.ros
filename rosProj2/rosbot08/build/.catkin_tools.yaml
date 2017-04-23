@@ -1,6 +1,0 @@
-devel_space: /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel
-install: false
-install_space: /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/install
-profile: default
-source_space: /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/src
-workspace: /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08

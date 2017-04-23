@@ -1,4 +1,0 @@
-mybot_control
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_control/lib/pkgconfig/mybot_control.pc /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/lib/pkgconfig/mybot_control.pc
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_control/share/mybot_control/cmake/mybot_controlConfig-version.cmake /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/share/mybot_control/cmake/mybot_controlConfig-version.cmake
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_control/share/mybot_control/cmake/mybot_controlConfig.cmake /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/share/mybot_control/cmake/mybot_controlConfig.cmake
