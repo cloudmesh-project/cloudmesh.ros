@@ -1,4 +1,0 @@
-mybot_gazebo
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_gazebo/lib/pkgconfig/mybot_gazebo.pc /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/lib/pkgconfig/mybot_gazebo.pc
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_gazebo/share/mybot_gazebo/cmake/mybot_gazeboConfig-version.cmake /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/share/mybot_gazebo/cmake/mybot_gazeboConfig-version.cmake
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_gazebo/share/mybot_gazebo/cmake/mybot_gazeboConfig.cmake /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/share/mybot_gazebo/cmake/mybot_gazeboConfig.cmake

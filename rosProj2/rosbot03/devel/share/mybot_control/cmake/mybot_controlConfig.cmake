@@ -1,1 +1,0 @@
-/home/eunosm3/rosProject/rosProj2/rosbot03/devel/.private/mybot_control/share/mybot_control/cmake/mybot_controlConfig.cmake

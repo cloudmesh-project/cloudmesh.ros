@@ -1,9 +1,0 @@
-<!-- Launch file for a single robot -->
-<launch>
-	<arg name="robot_name"/>
-	<arg name="init_pose"/>
-
-	<node name="spawn_myRobot_model" pkg="gazebo_ros" type="spawn_model"
-		args="$(arg_init_pose) -urdf -param /mybot_description -model $(arg robot_name)" respawn="false" output="screen" />
-	<!-- add other features here -->
-</launch>

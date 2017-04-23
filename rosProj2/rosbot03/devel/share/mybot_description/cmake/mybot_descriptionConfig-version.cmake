@@ -1,1 +1,0 @@
-/home/eunosm3/rosProject/rosProj2/rosbot03/devel/.private/mybot_description/share/mybot_description/cmake/mybot_descriptionConfig-version.cmake

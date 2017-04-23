@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cm cluster define -n rosA1 -c 3
+cm cluster allocate
+cm cluster cross_ssh

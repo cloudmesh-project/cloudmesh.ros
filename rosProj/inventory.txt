@@ -1,4 +1,0 @@
-[eunosm3-cluster]
-129.114.33.151 ansible_ssh_user="cc"
-#129.114.33.220 ansible_ssh_user="cc"
-129.114.32.107 ansible_ssh_user="cc"

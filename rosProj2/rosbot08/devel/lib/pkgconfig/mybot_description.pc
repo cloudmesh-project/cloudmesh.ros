@@ -1,1 +1,0 @@
-/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description/lib/pkgconfig/mybot_description.pc
