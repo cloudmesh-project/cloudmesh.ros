@@ -1,0 +1,1 @@
+/home/eunosm3/rosProject/rosProj2/rosbot03/devel/.private/mybot_control/lib/pkgconfig/mybot_control.pc

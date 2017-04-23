@@ -1,0 +1,8 @@
+prefix=/home/eunosm3/rosProject/rosProj2/rosbot03/devel/.private/mybot_description
+
+Name: mybot_description
+Description: Description of mybot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/eunosm3/rosProject/rosProj2/rosbot03/devel/.private/mybot_description/lib 
+Requires: 

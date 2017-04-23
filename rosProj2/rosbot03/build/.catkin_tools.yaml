@@ -1,0 +1,6 @@
+devel_space: /home/eunosm3/rosProject/rosProj2/rosbot03/devel
+install: false
+install_space: /home/eunosm3/rosProject/rosProj2/rosbot03/install
+profile: default
+source_space: /home/eunosm3/rosProject/rosProj2/rosbot03/src
+workspace: /home/eunosm3/rosProject/rosProj2/rosbot03

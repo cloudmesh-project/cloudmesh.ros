@@ -1,0 +1,1 @@
+/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_gazebo/share/mybot_gazebo/cmake/mybot_gazeboConfig-version.cmake

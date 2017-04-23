@@ -1,0 +1,4 @@
+mybot_description
+/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description/lib/pkgconfig/mybot_description.pc /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/lib/pkgconfig/mybot_description.pc
+/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description/share/mybot_description/cmake/mybot_descriptionConfig-version.cmake /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/share/mybot_description/cmake/mybot_descriptionConfig-version.cmake
+/media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/.private/mybot_description/share/mybot_description/cmake/mybot_descriptionConfig.cmake /media/storage/github/cloudmesh/cloudmesh.ros/rosProj2/rosbot08/devel/share/mybot_description/cmake/mybot_descriptionConfig.cmake
