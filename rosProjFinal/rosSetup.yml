@@ -2,10 +2,11 @@
 - hosts: all
   become: true
   roles:
+    - identifySelf
     - treePkg
-    - rosPkg
-    - catkinPkg
-    - rosEnvSetup
+    # - rosPkg
+    # - catkinPkg
+    # - rosEnvSetup
 
 
 
