@@ -78,6 +78,9 @@ ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/ro
 # ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/inventory.txt
 ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/rosSetup.yml
 
+#add the script for the second part of the setup process to the master node
+ssh cc@$node01_ip wget -P /home/cc/ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/beginAgain
+
 #cleanup
 rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
 
