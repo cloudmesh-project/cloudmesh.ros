@@ -4,9 +4,9 @@
   roles:
     - identifySelf
     - treePkg
-    # - rosPkg
-    # - catkinPkg
-    # - rosEnvSetup
+    - rosPkg
+    - catkinPkg
+    - rosEnvSetup
 
 
 
