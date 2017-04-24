@@ -48,9 +48,10 @@ echo $node02_stat_ip" "$node02_nm >> ~/addMeToHostFiles.list
 echo $node03_stat_ip" "$node03_nm >> ~/addMeToHostFiles.list
 
 cm cluster inventory -o ~/inventoryInter.txt
-echo "[master]" > ~/inventory.txt
+# echo "[master]" > ~/inventory.txt
+echo "[all]" > ~/inventory.txt
 echo $(sed -n '2p' ~/inventoryInter.txt) >> ~/inventory.txt
-echo "[servants]" >> ~/inventory.txt
+# echo "[servants]" >> ~/inventory.txt
 echo $(sed -n '3p' ~/inventoryInter.txt) >> ~/inventory.txt
 echo $(sed -n '4p' ~/inventoryInter.txt) >> ~/inventory.txt
 
