@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-#run this command from a terminal console
-# wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/initiate
+# wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/begin
 
 #create and prepare a three-node cluster
 cm cluster define -n rosA1 -c 3
@@ -50,7 +49,8 @@ echo $node03_stat_ip" "$node03_nm >> ~/addMeToHostFiles.list
 cm cluster inventory -o ~/inventoryInter.txt
 # echo "[master]" > ~/inventory.txt
 echo "[all]" > ~/inventory.txt
-echo $(sed -n '2p' ~/inventoryInter.txt) >> ~/inventory.txt
+echo "localhost ansible_connection=local" >> ~/inventory.txt
+#echo $(sed -n '2p' ~/inventoryInter.txt) >> ~/inventory.txt
 # echo "[servants]" >> ~/inventory.txt
 echo $(sed -n '3p' ~/inventoryInter.txt) >> ~/inventory.txt
 echo $(sed -n '4p' ~/inventoryInter.txt) >> ~/inventory.txt
@@ -58,9 +58,6 @@ echo $(sed -n '4p' ~/inventoryInter.txt) >> ~/inventory.txt
 #add files necessary for upcoming steps to master node
 #use subversion to place the ansible files and the RoS robot files on the master node
 #use wget to place the rosSetup.yml file and inventory.txt file on the master node
-
-#add inventory.txt file to master node; also creates the ansibleScript directory
-rsync ~/inventory.txt cc@$node01_ip:/home/cc/ansibleScript/
 
 #add addMeToHostFiles.list to each cluster node
 rsync ~/addMeToHostFiles.list cc@$node01_ip:/home/cc
@@ -73,7 +70,9 @@ ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/ro
 
 # #Ansible files
 # mkdir ~/ansibleScript
+#add inventory.txt file to master node; also creates the ansibleScript directory
 echo "README: Placing Ansible files in ~/ansibleScript"
+rsync ~/inventory.txt cc@$node01_ip:/home/cc/ansibleScript/
 ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/rosProjFinal/roles /home/cc/ansibleScript/roles/
 # cd ~/ansibleScript
 # ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/inventory.txt

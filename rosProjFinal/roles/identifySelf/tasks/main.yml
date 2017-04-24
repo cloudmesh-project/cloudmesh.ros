@@ -25,7 +25,7 @@
 
 - name: update /etc/hosts w/ node's hostname step 4
   become_user: cc
-  shell: mv /home/cc/hosts /etc/hosts
   become: yes
+  shell: sudo mv /home/cc/hosts /etc/hosts
   args:
     executable: /bin/bash
