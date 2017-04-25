@@ -1,56 +1,92 @@
 ---
-- name: catkin workspace setup main
+- name: source ROS setup file
+  hosts: master
   become_user: cc
-  file: path=/tmp/catkin_ws state=directory
-#  become_user: "{{ default_user }}"
-#  file: path={{ catkin_wkspace }} state=directory
-- name: catkin workspace setup src
-  become_user: cc
-  file: path=/tmp/catkin_ws/src state=directory
-#  become_user: "{{ default_user }}"
-#  file: path={{ catkin_wkspace }}/src state=directory
-- name: catkin workspace setup logs
-  become_user: cc
-  file: path=/tmp/catkin_ws/logs state=directory
-#  become_user: "{{ default_user }}"
-#  file: path={{ catkin_wkspace }}/logs state=directory
-- name: catkin worskspace setup install
-  become_user: cc
-  file: path=/tmp/catkin_ws/install state=directory
-#  file: path={{ catkin_wkspace }}/install state=directory
-
-- name: initialize  catkin workspace
-  shell: catkin config --init --extend /opt/ros/kinetic
-  become: yes
-#  become_user: "{{ default_user }}"
-  become_user: cc
+  shell: source setup.bash
   args:
-    chdir: /tmp/catkin_ws
-#    chdir: "{{ catkin_wkspace }}"
-#    executable: "{{ shell_exec }}"
+    chdir: /opt/ros/kinetic
     executable: /bin/bash
 
-- name: create catkin package
-  shell: catkin create pkg i524ros --rosdistro kinetic --catkin-deps std_msgs rospy roscpp
-  become: yes
-#  become_user: "{{ default_user }}"
+- name: clean the workspace
+  hosts: master
   become_user: cc
+  shell: catkin clean --yes
   args:
-#    chdir: "{{ catkin_wkspace }}"/src
-#    executable: "{{ shell_exec }}"
-    chdir: /tmp/catkin_ws/src
+    chdir: /home/cc/mybot_ws
     executable: /bin/bash
 
-- name: build package(s)
+- name: build the robot workspace
+  hosts: master
+  become_user: cc
   shell: catkin build
-  become: yes
-  become_user: cc
-#  become_user: "{{ default_user }}"
   args:
-#    chdir: "{{ catkin_wkspace }}"/src
-#    executable: "{{ shell_exec }}"
-    chdir: /tmp/catkin_ws/src
+    chdir: /home/cc/mybot_ws
     executable: /bin/bash
+
+- name: source mybot_ws setup file
+  hosts: master
+  become_user: cc
+  shell: source setup.bash
+  args:
+    chdir: /home/cc/mybot_ws/devel
+    executable: /bin/bash
+
+
+
+
+#===========superseded=======================
+# - name: catkin workspace setup main
+#   become_user: cc
+#   file: path=/tmp/catkin_ws state=directory
+# #  become_user: "{{ default_user }}"
+# #  file: path={{ catkin_wkspace }} state=directory
+# - name: catkin workspace setup src
+#   become_user: cc
+#   file: path=/tmp/catkin_ws/src state=directory
+# #  become_user: "{{ default_user }}"
+# #  file: path={{ catkin_wkspace }}/src state=directory
+# - name: catkin workspace setup logs
+#   become_user: cc
+#   file: path=/tmp/catkin_ws/logs state=directory
+# #  become_user: "{{ default_user }}"
+# #  file: path={{ catkin_wkspace }}/logs state=directory
+# - name: catkin worskspace setup install
+#   become_user: cc
+#   file: path=/tmp/catkin_ws/install state=directory
+# #  file: path={{ catkin_wkspace }}/install state=directory
+
+# - name: initialize  catkin workspace
+#   shell: catkin config --init --extend /opt/ros/kinetic
+#   become: yes
+# #  become_user: "{{ default_user }}"
+#   become_user: cc
+#   args:
+#     chdir: /tmp/catkin_ws
+# #    chdir: "{{ catkin_wkspace }}"
+# #    executable: "{{ shell_exec }}"
+#     executable: /bin/bash
+
+# - name: create catkin package
+#   shell: catkin create pkg i524ros --rosdistro kinetic --catkin-deps std_msgs rospy roscpp
+#   become: yes
+# #  become_user: "{{ default_user }}"
+#   become_user: cc
+#   args:
+# #    chdir: "{{ catkin_wkspace }}"/src
+# #    executable: "{{ shell_exec }}"
+#     chdir: /tmp/catkin_ws/src
+#     executable: /bin/bash
+
+# - name: build package(s)
+#   shell: catkin build
+#   become: yes
+#   become_user: cc
+# #  become_user: "{{ default_user }}"
+#   args:
+# #    chdir: "{{ catkin_wkspace }}"/src
+# #    executable: "{{ shell_exec }}"
+#     chdir: /tmp/catkin_ws/src
+#     executable: /bin/bash
 
 #- name: setup caktin workspace
 #  become: true
