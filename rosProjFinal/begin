@@ -50,7 +50,7 @@ echo $node03_stat_ip" "$node03_nm >> ~/addMeToHostFiles.list
 # echo "[master]" > ~/inventory.txt
 echo "[master]" > ~/inventory.txt
 echo "localhost ansible_connection=local" >> ~/inventory.txt
-echo "[all]" > ~/inventory.txt
+echo "[all]" >> ~/inventory.txt
 echo "localhost ansible_connection=local" >> ~/inventory.txt
 echo $node02_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
 echo $node03_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
@@ -86,9 +86,9 @@ ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.c
 ssh cc@$node01_ip wget -P /home/cc/ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/beginAgain
 ssh -o StrictHostKeyChecking=no cc@$node01_ip chmod +x /home/cc/beginAgain
 ssh -o StrictHostKeyChecking=no cc@$node01_ip ./beginAgain
+
 #cleanupexit
 # rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
-
 rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
 
 #connect to "master" node
