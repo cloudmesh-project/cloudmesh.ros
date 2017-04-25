@@ -20,5 +20,5 @@ ssh -o StrictHostKeyChecking=no cc@$node_ip03 hostname
 rm ~/inventoryInter.txt
 
 #start the Ansible script
-# cd ~/ansibleScript
-# ansible-playbook -i inventory.txt rosSetup.yml
+cd ~/ansibleScript
+ansible-playbook -i inventory.txt rosSetup.yml
