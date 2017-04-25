@@ -12,7 +12,7 @@ cm cluster nodes > node.list
 cut -d' ' -f2 node.list > ~/ip.list
 cut -d' ' -f1 node.list > ~/name.list
 
-echo "README: IP Addresses and Names of Cluster Nodes:"
+echo "INFO: Public IP Addresses and Names of Cluster Nodes:"
 node01_ip=$(head -1 ~/ip.list)
 echo "Node #1 IP Address: "$node01_ip
 node01_nm=$(head -1 ~/name.list)
@@ -46,14 +46,16 @@ echo $node01_stat_ip" "$node01_nm > ~/addMeToHostFiles.list
 echo $node02_stat_ip" "$node02_nm >> ~/addMeToHostFiles.list
 echo $node03_stat_ip" "$node03_nm >> ~/addMeToHostFiles.list
 
-cm cluster inventory -o ~/inventoryInter.txt
+#cm cluster inventory -o ~/inventoryInter.txt
 # echo "[master]" > ~/inventory.txt
 echo "[all]" > ~/inventory.txt
 echo "localhost ansible_connection=local" >> ~/inventory.txt
+echo $node02_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
+echo $node03_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
 #echo $(sed -n '2p' ~/inventoryInter.txt) >> ~/inventory.txt
 # echo "[servants]" >> ~/inventory.txt
-echo $(sed -n '3p' ~/inventoryInter.txt) >> ~/inventory.txt
-echo $(sed -n '4p' ~/inventoryInter.txt) >> ~/inventory.txt
+# echo $(sed -n '3p' ~/inventoryInter.txt) >> ~/inventory.txt
+# echo $(sed -n '4p' ~/inventoryInter.txt) >> ~/inventory.txt
 
 #add files necessary for upcoming steps to master node
 #use subversion to place the ansible files and the RoS robot files on the master node
@@ -80,9 +82,12 @@ ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.c
 
 #add the script for the second part of the setup process to the master node
 ssh cc@$node01_ip wget -P /home/cc/ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/beginAgain
+ssh -o StrictHostKeyChecking=no cc@$node01_ip chmod +x /home/cc/beginAgain
 
 #cleanup
-rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
+# rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
+
+rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
 
 #connect to "master" node
 # cm vm ssh -H $node01_nm
