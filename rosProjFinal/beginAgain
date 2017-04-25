@@ -1,22 +1,24 @@
 #accept the verity of the other nodes in the cluster; 
 #ansible seems to hang if this is not done first
 
+
+echo "Adding static ip addresses to master node host file"
 cut -d' ' -f1 ~/addMeToHostFiles.list > ~/inventoryInter.txt
 
 node_ip01=$(sed -n '1p' ~/inventoryInter.txt)
 echo $node_ip01
-ssh cc@$node_ip01 hostname
+ssh -o StrictHostKeyChecking=no cc@$node_ip01 hostname
 
 node_ip02=$(sed -n '2p' ~/inventoryInter.txt)
 echo $node_ip02
-ssh cc@$node_ip02 hostname
+ssh -o StrictHostKeyChecking=no cc@$node_ip02 hostname
 
 node_ip03=$(sed -n '3p' ~/inventoryInter.txt)
 echo $node_ip03
-ssh cc@$node_ip03 hostname
+ssh -o StrictHostKeyChecking=no cc@$node_ip03 hostname
 
 rm ~/inventoryInter.txt
 
 #start the Ansible script
-cd ~/ansibleScript
-ansible-playbook -i inventory.txt rosSetup.yml
+# cd ~/ansibleScript
+# ansible-playbook -i inventory.txt rosSetup.yml
