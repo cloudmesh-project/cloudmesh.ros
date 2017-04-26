@@ -24,6 +24,8 @@ cd ~/ansibleScript
 ansible-playbook -i inventory.txt rosSetup.yml
 
 #prepare the mybot_ws
+cd /opt/ros/kinetic
+source setup.bash
 cd /home/cc/mybot_ws
 catkin clean --yes
 catkin build
