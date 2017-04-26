@@ -22,3 +22,10 @@ rm ~/inventoryInter.txt
 #start the Ansible script
 cd ~/ansibleScript
 ansible-playbook -i inventory.txt rosSetup.yml
+
+#prepare the mybot_ws
+cd /home/cc/mybot_ws
+catkin clean --yes
+catkin build
+source devel/setup.bash
+echo "beginAgain completed"
