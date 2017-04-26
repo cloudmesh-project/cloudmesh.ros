@@ -1,35 +1,35 @@
 ---
 - name: source ROS setup file
-  hosts: master
+  # hosts: master
   become_user: cc
   shell: source setup.bash
   args:
     chdir: /opt/ros/kinetic
     executable: /bin/bash
 
-- name: clean the workspace
-  hosts: master
-  become_user: cc
-  shell: catkin clean --yes
-  args:
-    chdir: /home/cc/mybot_ws
-    executable: /bin/bash
+# - name: clean the workspace
+#   # hosts: master
+#   become_user: cc
+#   shell: catkin clean --yes
+#   args:
+#     chdir: /home/cc/mybot_ws
+#     executable: /bin/bash
 
-- name: build the robot workspace
-  hosts: master
-  become_user: cc
-  shell: catkin build
-  args:
-    chdir: /home/cc/mybot_ws
-    executable: /bin/bash
+# - name: build the robot workspace
+#   # hosts: master
+#   become_user: cc
+#   shell: catkin build
+#   args:
+#     chdir: /home/cc/mybot_ws
+#     executable: /bin/bash
 
-- name: source mybot_ws setup file
-  hosts: master
-  become_user: cc
-  shell: source setup.bash
-  args:
-    chdir: /home/cc/mybot_ws/devel
-    executable: /bin/bash
+# - name: source mybot_ws setup file
+#   # hosts: master
+#   become_user: cc
+#   shell: source setup.bash
+#   args:
+#     chdir: /home/cc/mybot_ws/devel
+#     executable: /bin/bash
 
 
 
