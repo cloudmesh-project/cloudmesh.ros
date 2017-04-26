@@ -18,3 +18,13 @@ Prepatory Steps
 
 4. Ensure cloudmesh access
 	The process depends on cloudmesh_client commands.  You must have access to them in order for the process to succeed.
+
+Known Problems
+ 1. Simulation Software Fails
+ 	In some circumstances, the simulation software, Gazebo, will fail to launch properly.  The failure results from the method ROS' *roslaunch* command initializes Gazebo.  Possible solutions involve issuing the following commands from the terminal from the mybot_ws directory:
+ 	a. source  /home/cc/mybot_ws/devel/setup.bash
+ 	   rosrun gazebo_ros gzclient
+ 	   roslaunch mybot_gazebo mybot_world.launch
+ 	b. source /home/cc/mybot_ws/devel/setup.bash
+ 	   killall gzserver
+ 	   roslaunch mybot_gazebo mybot_world.launch

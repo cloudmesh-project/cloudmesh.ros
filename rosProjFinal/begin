@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/begin
-
 #create and prepare a three-node cluster
 cm cluster define -n rosA1 -c 3
 cm cluster allocate
@@ -64,9 +63,9 @@ echo $node03_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
 #use wget to place the rosSetup.yml file and inventory.txt file on the master node
 
 #add addMeToHostFiles.list to each cluster node
-rsync ~/addMeToHostFiles.list cc@$node01_ip:/home/cc
-rsync ~/addMeToHostFiles.list cc@$node02_ip:/home/cc
-rsync ~/addMeToHostFiles.list cc@$node03_ip:/home/cc
+rsync -e "ssh -o StrictHostKeyChecking=no" ~/addMeToHostFiles.list cc@$node01_ip:/home/cc
+rsync -e "ssh -o StrictHostKeyChecking=no" ~/addMeToHostFiles.list cc@$node02_ip:/home/cc
+rsync -e "ssh -o StrictHostKeyChecking=no" ~/addMeToHostFiles.list cc@$node03_ip:/home/cc
 
 #ROS robot files
 echo "README: Placing ROS files in ~/mybot_ws on master  node"
