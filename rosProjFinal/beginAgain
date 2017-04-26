@@ -30,4 +30,5 @@ cd /home/cc/mybot_ws
 catkin clean --yes
 catkin build
 source devel/setup.bash
+echo "source /home/cc/mybot_ws/devel/setup.bash" >> /home/cc/.bashrc
 echo "beginAgain completed"
