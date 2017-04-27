@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 # wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/begin
+
+#manipulate the known_hosts file to avoid errors
+echo "Saving current known_hosts file as known_hosts.rosBAK"
+mv ~/.ssh/known_hosts ~/.ssh/known_hosts.rosBAK
+touch ~/.ssh/known_hosts
+
 #create and prepare a three-node cluster
 cm cluster define -n rosA1 -c 3
 cm cluster allocate
@@ -88,7 +94,8 @@ ssh -o StrictHostKeyChecking=no cc@$node01_ip ./beginAgain
 
 #cleanupexit
 # rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
-rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
+mv ~/.ssh/known_hosts.rosBAK ~/,ssh/known_hosts
+rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list,~/.ssh/known_hosts.rosBAK}
 
 #connect to "master" node
 # cm vm ssh -H $node01_nm
