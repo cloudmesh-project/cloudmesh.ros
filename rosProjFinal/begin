@@ -103,7 +103,7 @@ rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter0
 timeEnd=$SECONDS
 totTime=$timeEnd-$timeBgn
 #awk "BEGIN {print $totTime/60}"
-echo "Total Run Time:  $(($totTime % 60))sec"
+echo "Total Run Time:  $(($totTime % 60))sec" >> ~/timer.txt
 #times
 
 #connect to "master" node
