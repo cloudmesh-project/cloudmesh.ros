@@ -100,11 +100,12 @@ ssh -o StrictHostKeyChecking=no cc@$node01_ip chmod +x /home/cc/beginAgain
 mv ~/.ssh/known_hosts.rosBAK ~/.ssh/known_hosts
 rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
 
-#connect to "master" node
-# cm vm ssh -H $node01_nm
-# ssh -X cc@$node01_ip
 timeEnd=$SECONDS
 totTime=$timeEnd-$timeBgn
 #awk "BEGIN {print $totTime/60}"
 echo "Total Run Time:  $(($totTime % 60))sec"
 #times
+
+#connect to "master" node
+# cm vm ssh -H $node01_nm
+ssh -X cc@$node01_ip
