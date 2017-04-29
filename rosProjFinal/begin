@@ -2,6 +2,9 @@
 
 # wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/begin
 
+#set beginning value for script timer
+timeBgn=$SECONDS
+
 #manipulate the known_hosts file to avoid errors
 echo "Saving current known_hosts file as known_hosts.rosBAK"
 mv ~/.ssh/known_hosts ~/.ssh/known_hosts.rosBAK
@@ -90,13 +93,18 @@ ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.c
 #add the script for the second part of the setup process to the master node
 ssh cc@$node01_ip wget -P /home/cc/ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/beginAgain
 ssh -o StrictHostKeyChecking=no cc@$node01_ip chmod +x /home/cc/beginAgain
-ssh -o StrictHostKeyChecking=no cc@$node01_ip ./beginAgain
+# ssh -o StrictHostKeyChecking=no cc@$node01_ip ./beginAgain
 
 #cleanupexit
 # rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
-mv ~/.ssh/known_hosts.rosBAK ~/,ssh/known_hosts
-rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list,~/.ssh/known_hosts.rosBAK}
+mv ~/.ssh/known_hosts.rosBAK ~/.ssh/known_hosts
+rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
 
 #connect to "master" node
 # cm vm ssh -H $node01_nm
-ssh -X cc@$node01_ip
+# ssh -X cc@$node01_ip
+timeEnd=$SECONDS
+totTime=$timeEnd-$timeBgn
+#awk "BEGIN {print $totTime/60}"
+echo "Total Run Time:  $(($totTime % 60))sec"
+#times

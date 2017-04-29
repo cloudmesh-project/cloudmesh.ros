@@ -1,6 +1,7 @@
-#accept the verity of the other nodes in the cluster; 
-#ansible seems to hang if this is not done first
-
+# 1) accept the verity of the other nodes in the cluster; 
+# 2) ansible seems to hang if this is not done first
+# 3) run the ansible script
+# 4) setup and start the robots
 
 echo "Adding static ip addresses to master node host file"
 cut -d' ' -f1 ~/addMeToHostFiles.list > ~/inventoryInter.txt
