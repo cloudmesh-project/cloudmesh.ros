@@ -1,0 +1,105 @@
+\documentclass[9pt,twocolumn,twoside]{../../styles/osajnl}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\journal{i524} 
+
+\title{Prototyping a Virtual Robot Swarm with ROS and Gazebo}
+
+\author[1]{Matthew Lawson}
+\author[1,*]{Gregor von Laszewski}
+
+\affil[1]{School of Informatics and Computing, Bloomington, IN 47408, U.S.A.}
+
+\affil[*]{Corresponding authors: laszewski@gmail.com}
+
+\dates{project-000, \today}
+
+\ociscodes{Cloud, I524, ROS, Gazebo, Robot, Swarm}
+
+% replace this with your url in github/gitlab
+\doi{\url{https://github.com/cloudmesh/sp17-i524/tree/master/project/S17-IO-3010/report/report.pdf}}
+
+\begin{abstract}
+Our virtual robot swarm prototype accomplishes a \textit{TBD task} by allocating portions of the task to each virtual robot (VR).  As each VR works on its piece of the task, it communicates relevant information back to the master VR.  Upon completion, the master VR collates the results and creates a human-readable report.  The virtual swarm utilizes the \textit{Robot Operating System} to control the virtual robots, \textit{Gazebo} to simulate the task completion and \textit{RVIZ} to visualize the process.  We use \textit{Ansible} to deploy the software to a distributed computing environment.  The importance of our effort centers on some super-special conclusion I do not yet grasp.
+\newline
+\end{abstract}
+
+\setboolean{displaycopyright}{true}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Stating the Problem:
+Simulating a single robot's actions and responses to its environment prior to real-world deployment mitigates risk and improves results at a relatively low cost. It follows that simulating the actions and responses of a group of robots, e.g., a swarm, will also improve results at a low cost.  However, deployment of an interconnected swarm of virtual robots requires much more time and effort than a single virtual robot.  Collecting the results from a swarm also requires additional effort.
+
+Our Contribution:
+We create a cross-platform system to quickly and relatively easily deploy and manage a swarm, as well as evaluate the swarm's operational effectiveness.  Or maybe something else...I'm not sure, yet.
+Automate the deployment of a virtual robot swarm that will accomplish some arbitrary task; capture data from the swarm as it completes its task; report back the results in a human-readable format.
+
+\section{Virtual Robot Swarm Components}
+\subsection{Robot Operating System (ROS) \cite{www-ros-about}}
+TBD; will include a discussion of a) how to obtain and install ROS and b) ROS graph concepts.  The latter topic will introduce ROS' core components, namely a node, publications, suscriptions, topics and services.  This section should probably cover ROS packages and ROS client libraries (primarily C++ and Python)
+\subsection{Gazebo \cite{www-software-categories}}
+TBD; again, introducing core Gazebo concepts.  In this case, will include a) world files, b) model files and c) its client-server model.  It should also include non-obvious limitation examples, e.g., a gripper arm driven by a single screw instead of multiple screws.  In addition, it should allude to any limitations that affect our simulation.
+\subsection{Ansible}
+TBD; briefly describe Ansible - what it is, salient features, etc.
+\subsection{Testing Environment}
+TBD; briefly describe cloudmesh
+
+
+\section{Virtual Robot Swarm Project Implementation}
+\subsection{VR Swarm task}
+TBD; discuss the task to be accomplished by the swarm, as well as how the information collected during task completion will be communicated back to the master node for collation and reporting.
+\subsection{Deployment}
+TBD; document the Ansible steps needed to successfully deploy ROS and Gazebo on multiple computers;  will include references for obtaining major components, including adding new repositories if needed.
+\subsection{Modifications, Pitfalls}
+TBD; discuss any obstacles encountered with deployment due to dependency problems, connecting ROS and Gazebo, etc.
+\subsection{Initializing the Swarm}
+TBD; starting ROS and Gazebo to create the virtual environment; testing swarm interconnectivity; designating master node, etc.
+\subsection{Begin Task and Monitor Swarm's Progress}
+TBD; discuss the steps to initiate task completion and monitor the swarm's progress;
+\subsection{Information Acquired}
+TBD; discuss the iformation obtained from the swarm wrt the task at hand as well as each node's vital signs, e.g., battery level;
+\subsection{Updating Software}
+TBD; discuss the methods used to implement software updates on each node; remain cognizant of battery levels
+\textit{I have no idea how I might accomplish an over-the-air update of ROS.  This point intimidates me.}
+
+\section{VR Swarm Project Conclusions}
+TBD; present the data collected in some visualization format; discuss why this project advances robotics forward by utilizing distributed computing;
+
+\section{Supplemental Material}
+
+% Bibliography
+
+\bibliography{references}
+ 
+\section*{Author Biographies}
+\begingroup
+\setlength\intextsep{0pt}
+\begin{minipage}[t][3.2cm][t]{1.0\columnwidth} % Adjust height [3.2cm] as required for separation of bio photos.
+  \noindent
+  {\bfseries Matthew Lawson} received his BSBA, Finance in 1999 from
+  the University of Tennessee, Knoxville. His research interests include
+  data analysis, visualization and behavioral finance.
+\end{minipage}
+\endgroup
+
+\appendix
+
+\section{Work Breakdown}
+
+The work on this project was distributed as follows between the
+authors:
+
+
+\begin{description}
+
+\item[Matthew Lawson.] Designed the project in collaboration w/ Gregor von Laszewski, researched the material and implemented the project.  Slept far too little.
+
+\item[Gregor von Laszewski.] Provided invaluable insights at key points during the process.
+
+\end{description}
+
+\end{document}
