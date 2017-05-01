@@ -88,7 +88,7 @@ rsync ~/inventory.txt cc@$node01_ip:/home/cc/ansibleScript/
 ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/code/roles /home/cc/ansibleScript/roles/
 # cd ~/ansibleScript
 # ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/inventory.txt
-ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/rosSetup.ymls
+ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/rosSetup.yml
 
 #add the script for the second part of the setup process to the master node
 ssh cc@$node01_ip wget -P /home/cc/ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/beginAgain

@@ -8,49 +8,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
+Warning--I didn't find a database entry for "www-ode-homepage"
+Warning--I didn't find a database entry for "www-dart-homepage"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 2 entries,
+You've used 11 entries,
             4039 wiz_defined-function locations,
-            822 strings with 7504 characters,
-and the built_in function-call counts, 987 in all, are:
-= -- 83
-> -- 8
+            863 strings with 8500 characters,
+and the built_in function-call counts, 4967 in all, are:
+= -- 461
+> -- 44
 < -- 0
-+ -- 4
-- -- 2
-* -- 57
-:= -- 206
-add.period$ -- 4
-call.type$ -- 2
-change.case$ -- 4
++ -- 22
+- -- 11
+* -- 227
+:= -- 1008
+add.period$ -- 22
+call.type$ -- 11
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 70
-empty$ -- 79
-format.name$ -- 2
-if$ -- 190
+cite$ -- 11
+duplicate$ -- 385
+empty$ -- 430
+format.name$ -- 11
+if$ -- 1037
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 16
-newline$ -- 33
-num.names$ -- 2
-pop$ -- 38
+int.to.str$ -- 11
+missing$ -- 88
+newline$ -- 78
+num.names$ -- 11
+pop$ -- 209
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 68
+skip$ -- 374
 stack$ -- 0
-substring$ -- 6
-swap$ -- 48
+substring$ -- 33
+swap$ -- 264
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 2
+type$ -- 11
 warning$ -- 0
-while$ -- 2
-width$ -- 3
-write$ -- 46
+while$ -- 11
+width$ -- 13
+write$ -- 154
+(There were 2 warnings)
