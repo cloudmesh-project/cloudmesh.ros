@@ -1,17 +1,17 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Virtual Robot Swarm Components}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Robot Operating System \(ROS\) www-ros-about}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Gazebo www-software-categories}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Robot Operating System \(ROS\)}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Gazebo}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Ansible}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Testing Environment}{section.2}% 6
-\BOOKMARK [1][-]{section.3}{Virtual Robot Swarm Project Implementation}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{VR Swarm task}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{Deployment}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.3}{Modifications, Pitfalls}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.4}{Initializing the Swarm}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.5}{Begin Task and Monitor Swarm's Progress}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.6}{Information Acquired}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.7}{Updating Software}{section.3}% 14
+\BOOKMARK [2][-]{subsection.2.4}{cloudmesh client toolkit}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Testing Environment}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Virtual Robot Swarm Project Implementation}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{VR Swarm task}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Deployment}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Modifications, Pitfalls}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Initializing the Swarm}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.5}{Begin Task and Monitor Swarm's Progress}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.6}{Information Acquired}{section.3}% 14
 \BOOKMARK [1][-]{section.4}{VR Swarm Project Conclusions}{}% 15
 \BOOKMARK [1][-]{section.5}{Supplemental Material}{}% 16
 \BOOKMARK [1][-]{appendix.A}{Work Breakdown}{}% 17
