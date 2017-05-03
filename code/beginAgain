@@ -1,4 +1,5 @@
-# 1) accept the verity of the other nodes in the cluster; 
+#!/usr/bin/env bash
+# 1) accept the veracity of the other nodes in the cluster; 
 # 2) ansible seems to hang if this is not done first
 # 3) run the ansible script
 # 4) setup and start the robots
@@ -24,7 +25,7 @@ rm ~/inventoryInter.txt
 cd ~/ansibleScript
 ansible-playbook -i inventory.txt rosSetup.yml
 
-#prepare the mybot_ws
+#prepare the mybot_ws workspace
 cd /opt/ros/kinetic
 source setup.bash
 cd /home/cc/mybot_ws
@@ -32,6 +33,14 @@ catkin clean --yes
 catkin build
 source devel/setup.bash
 echo "source /home/cc/mybot_ws/devel/setup.bash" >> /home/cc/.bashrc
+
+# start talker.py on node #2
+## start roscore
+ssh cc@$node_ip02 wget -P /home/cc/talkListen https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/talkListen
+ssh -o StrictHostKeyChecking=no cc@$node_ip02 chmod +x /home/cc/talkListen
+ssh -o StrictHostKeyChecking=no cc@$node_ip02 ./talkListen
+
+# start the simulation and command the robots to move
 sleep 90 && rostopic pub /robot1/cmd_vel geometry_msgs/Twist '{linear: {x: 0.2, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}'&
 sleep 90 && rostopic pub /robot2/cmd_vel geometry_msgs/Twist '{linear: {x: 0.2, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}'&
 (
@@ -40,8 +49,6 @@ sleep 90 && rostopic pub /robot2/cmd_vel geometry_msgs/Twist '{linear: {x: 0.2, 
 
 timeEnd=$SECONDS
 totTime=$timeEnd-$timeBgn
-#awk "BEGIN {print $totTime/60}"
-echo "Total Run Time:  $(($totTime % 60))sec"
-#times
+echo "Total Run Time:  $(($totTime % 60))sec" > /home/cc/timer.txt
 
 echo "beginAgain completed"

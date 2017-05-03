@@ -49,6 +49,13 @@ H.~Boyer, ``{Open Source Robotics Foundation And The Robotics Fast Track},''
   \url{http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b1}
 \BIBentrySTDinterwordspacing
 
+\bibitem{www-ode-homepage}
+\BIBentryALTinterwordspacing
+{Open Dynamics Engine}, ``{Open Dynamics Engine Wiki},'' Web page, feb 2017,
+  accessed 30-apr-2017. [Online]. Available:
+  \url{https://www.ode-wiki.org/wiki/index.php?title=Main_Page}
+\BIBentrySTDinterwordspacing
+
 \bibitem{www-bullet-homepage}
 \BIBentryALTinterwordspacing
 {Real-Time Physics Simulation}, ``{Bullet Physics Library: Real-Time Physic
@@ -63,6 +70,13 @@ P.~E. Michael~Sherman, ``{Simbody: Multibody Physics API},'' Web page, apr
   \url{https://simtk.org/projects/simbody/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{www-dart-homepage}
+\BIBentryALTinterwordspacing
+{Georgia Tech and Carnegie Mellon University}, ``{DART: Dynamic Animation and
+  Robotics Toolkit},'' Web page, mar 2017, accessed 30-apr-2017. [Online].
+  Available: \url{http://dartsim.github.io}
+\BIBentrySTDinterwordspacing
+
 \bibitem{www-ogre-homepage}
 \BIBentryALTinterwordspacing
 {Torus Knot Software Ltd}, ``{OGRE3D},'' Web page, apr 2017, accessed
@@ -71,8 +85,8 @@ P.~E. Michael~Sherman, ``{Simbody: Multibody Physics API},'' Web page, apr
 
 \bibitem{www-ogre-about}
 \BIBentryALTinterwordspacing
-------, ``{OGRE: About},'' Web page, apr 2017, accessed 30-apr-2017. [Online].
-  Available: \url{http://www.ogre3d.org/about}
+{Torus Knot Software Ltd}, ``{OGRE: About},'' Web page, apr 2017, accessed
+  30-apr-2017. [Online]. Available: \url{http://www.ogre3d.org/about}
 \BIBentrySTDinterwordspacing
 
 \bibitem{www-gazebo-ros}
