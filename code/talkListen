@@ -25,3 +25,4 @@ byobu-tmux -2 send-keys "rosrun rospy_tutorials talker.py" C-m
 byobu-tmux select-pane -t 0
 byobu-tmux -2 send-keys "ssh -o StrictHostKeyChecking=no  cc@$node_ip03" C-m
 byobu-tmux -2 attach-session -t $SESSION
+byobu
