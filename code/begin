@@ -103,7 +103,18 @@ echo "Total Run Time:  $(($totTime % 60))sec" >> ~/timer.txt
 
 #connect to "master" node
 # cm vm ssh -H $node01_nm
-ssh -X -o StrictHostKeyChecking=no cc@$node01_ip
+# ssh -X -o StrictHostKeyChecking=no cc@$node01_ip
+
+SESSION=$USER
+byobu-tmux -2 new-session -d -s $SESSION
+byobu-tmux split-window -v
+byobu-tmux select-pane -t 0
+byobu-tmux -2 send-keys "ssh -X -o StrictHostKeyChecking=no cc@$node01_ip" C-m
+byobu-tmux select-pane -t 1
+byobu-tmux -2 send-keys "ssh -X -o StrictHostKeyChecking=no cc@$node02_stat_ip" C-m
+byobu-tmux -2 attach-session -t $SESSION
+
+
 
 #cleanup
 # rm {~/ip.list,~/name.list,~/inventoryInter.txt,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
