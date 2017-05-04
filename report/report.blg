@@ -16,14 +16,14 @@ Done.
 You've used 13 entries,
             4039 wiz_defined-function locations,
             869 strings with 8719 characters,
-and the built_in function-call counts, 5852 in all, are:
+and the built_in function-call counts, 5851 in all, are:
 = -- 545
 > -- 52
 < -- 0
 + -- 26
 - -- 13
 * -- 265
-:= -- 1187
+:= -- 1186
 add.period$ -- 26
 call.type$ -- 13
 change.case$ -- 26

@@ -85,8 +85,8 @@ P.~E. Michael~Sherman, ``{Simbody: Multibody Physics API},'' Web page, apr
 
 \bibitem{www-ogre-about}
 \BIBentryALTinterwordspacing
-{Torus Knot Software Ltd}, ``{OGRE: About},'' Web page, apr 2017, accessed
-  30-apr-2017. [Online]. Available: \url{http://www.ogre3d.org/about}
+------, ``{OGRE: About},'' Web page, apr 2017, accessed 30-apr-2017. [Online].
+  Available: \url{http://www.ogre3d.org/about}
 \BIBentrySTDinterwordspacing
 
 \bibitem{www-gazebo-ros}
