@@ -4,7 +4,6 @@
 # 3) run the ansible script
 # 4) setup and start the robots
 
-echo "Adding static ip addresses to master node host file"
 cut -d' ' -f1 ~/addMeToHostFiles.list > ~/inventoryInter.txt
 
 node_ip01=$(sed -n '1p' ~/inventoryInter.txt)

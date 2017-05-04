@@ -54,22 +54,12 @@ echo $node01_stat_ip" "$node01_nm > ~/addMeToHostFiles.list
 echo $node02_stat_ip" "$node02_nm >> ~/addMeToHostFiles.list
 echo $node03_stat_ip" "$node03_nm >> ~/addMeToHostFiles.list
 
-#cm cluster inventory -o ~/inventoryInter.txt
-# echo "[master]" > ~/inventory.txt
 echo "[master]" > ~/inventory.txt
 echo "localhost ansible_connection=local" >> ~/inventory.txt
 echo "[all]" >> ~/inventory.txt
 echo "localhost ansible_connection=local" >> ~/inventory.txt
 echo $node02_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
 echo $node03_stat_ip" ansible_ssh_user=\"cc\"" >> ~/inventory.txt
-#echo $(sed -n '2p' ~/inventoryInter.txt) >> ~/inventory.txt
-# echo "[servants]" >> ~/inventory.txt
-# echo $(sed -n '3p' ~/inventoryInter.txt) >> ~/inventory.txt
-# echo $(sed -n '4p' ~/inventoryInter.txt) >> ~/inventory.txt
-
-#add files necessary for upcoming steps to master node
-#use subversion to place the ansible files and the RoS robot files on the master node
-#use wget to place the rosSetup.yml file and inventory.txt file on the master node
 
 #add addMeToHostFiles.list to each cluster node
 rsync -e "ssh -o StrictHostKeyChecking=no" ~/addMeToHostFiles.list cc@$node01_ip:/home/cc
@@ -79,15 +69,11 @@ rsync -e "ssh -o StrictHostKeyChecking=no" ~/addMeToHostFiles.list cc@$node03_ip
 #ROS robot files
 echo "README: Placing ROS files in ~/mybot_ws on master  node"
 ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/code/mybot_ws /home/cc/mybot_ws/
-# https://github.com/cloudmesh/cloudmesh.ros/trunk/rosProjFinal/mybot_ws /home/cc/mybot_ws/
-# #Ansible files
-# mkdir ~/ansibleScript
+
 #add inventory.txt file to master node; also creates the ansibleScript directory
 echo "README: Placing Ansible files in ~/ansibleScript"
 rsync ~/inventory.txt cc@$node01_ip:/home/cc/ansibleScript/
 ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/code/roles /home/cc/ansibleScript/roles/
-# cd ~/ansibleScript
-# ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/inventory.txt
 ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/rosSetup.yml
 
 #add the script for the second part of the setup process to the master node
