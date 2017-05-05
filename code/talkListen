@@ -13,6 +13,7 @@ node_ip03=$(sed -n '3p' ~/inventoryInter.txt)
 #echo $node_ip03
 ssh -o StrictHostKeyChecking=no cc@$node_ip03 hostname
 
+
 SESSION=$USER
 byobu-tmux -2 new-session -d -s $SESSION
 byobu-tmux split-window -v
@@ -20,8 +21,10 @@ byobu-tmux select-pane -t 1
 byobu-tmux split-window -h
 byobu-tmux select-pane -t 1
 byobu-tmux -2 send-keys "roscore" C-m
+byobu-tmux -2 send-keys "export ROS_MASTER_URI=http://$nodeip_02:11311" C-m
 byobu-tmux select-pane -t 2
 byobu-tmux -2 send-keys "rosrun rospy_tutorials talker.py" C-m
 byobu-tmux select-pane -t 0
+byobu-tmux -2 send-keys "ssh -o StrictHostKeyChecking=no cc@$node_ip03 export ROS_MASTER_URI=http://$nodeip_02:11311" C-m
 byobu-tmux -2 send-keys "ssh -o StrictHostKeyChecking=no  cc@$node_ip03" C-m
-byobu-tmux -2 attach-session -t $SESSION
+byobu-tmux -2 attach-session -t $SESSION1
