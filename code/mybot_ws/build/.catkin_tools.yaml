@@ -1,6 +1,0 @@
-devel_space: /home/eunosm3/rosProject/rosProjFinal/mybot_ws/devel
-install: false
-install_space: /home/eunosm3/rosProject/rosProjFinal/mybot_ws/install
-profile: default
-source_space: /home/eunosm3/rosProject/rosProjFinal/mybot_ws/src
-workspace: /home/eunosm3/rosProject/rosProjFinal/mybot_ws

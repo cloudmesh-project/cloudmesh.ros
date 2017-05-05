@@ -76,20 +76,21 @@ rsync ~/inventory.txt cc@$node01_ip:/home/cc/ansibleScript/
 ssh cc@$node01_ip svn export https://github.com/cloudmesh/cloudmesh.ros/trunk/code/roles /home/cc/ansibleScript/roles/
 ssh cc@$node01_ip wget -P /home/cc/ansibleScript https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/rosSetup.yml
 
+timeEnd=$SECONDS
+	totTime=$timeEnd-$timeBgn
+	echo "Run Time, pre-beginAgain:  $(($totTime % 60))sec" >> ~/timer.txt
+
 #add the script for the second part of the setup process to the master node
 ssh cc@$node01_ip wget -P /home/cc/ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/code/beginAgain
 ssh -o StrictHostKeyChecking=no cc@$node01_ip chmod +x /home/cc/beginAgain
-sleep 30 && ssh -o StrictHostKeyChecking=no cc@$node01_ip ./beginAgain&
-(
-	timeEnd=$SECONDS
-	totTime=$timeEnd-$timeBgn
-	
-	echo "Total Run Time:  $(($totTime % 60))sec" >> ~/timer.txt
-	
-	#cleanup
-	mv ~/.ssh/known_hosts.rosBAK ~/.ssh/known_hosts
-	rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list}
-	#connect to "master" node
-	# cm vm ssh -H $node01_nm
-	ssh -X -o StrictHostKeyChecking=no cc@$node01_ip
-)
+sleep 30 && ssh -o StrictHostKeyChecking=no cc@$node01_ip ./beginAgain
+
+timeEnd=$SECONDS
+totTime=$timeEnd-$timeBgn
+echo "Total Run Time:  $(($totTime % 60))sec" >> ~/timer.txt
+
+ssh -X -o StrictHostKeyChecking=no cc@$node01_ip
+
+#cleanup
+mv ~/.ssh/known_hosts.rosBAK ~/.ssh/known_hosts
+rm {~/ip.list,~/name.list,~/inventory.txt,~/static_ip_inter01,~/static_ip_inter02,~/addMeToHostFiles.list,~/node.list}
