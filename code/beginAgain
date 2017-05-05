@@ -49,6 +49,7 @@ totTime=$timeEnd-$timeBgn
 echo "Total Run Time:  $totTime sec" >> /home/cc/timer.txt
 
 # start the simulation and command the robots to move
+source /home/cc/.bashrc
 sleep 90 && rostopic pub /robot1/cmd_vel geometry_msgs/Twist '{linear: {x: 0.2, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}'&
 sleep 90 && rostopic pub /robot2/cmd_vel geometry_msgs/Twist '{linear: {x: 0.2, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}'&
 (
