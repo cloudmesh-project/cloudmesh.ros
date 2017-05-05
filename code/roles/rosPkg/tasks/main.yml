@@ -2,7 +2,7 @@
 - name: add ROS repository
   become: true
   apt_repository:
-    repo: 'deb http://packages.ros.org/ros/ubuntu xenial main'
+    repo: 'deb [trusted=yes] http://packages.ros.org/ros/ubuntu xenial main'
     state: present
     update_cache: yes
 
