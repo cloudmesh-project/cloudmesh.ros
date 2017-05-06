@@ -20,7 +20,7 @@ byobu-tmux split-window -v
 byobu-tmux select-pane -t 1
 byobu-tmux split-window -h
 byobu-tmux select-pane -t 1
-byobu-tmux -2 send-keys "export ROS_MASTER_URI=http://$node_ip02:11311" C-
+byobu-tmux -2 send-keys "export ROS_MASTER_URI=http://$node_ip02:11311" C-m
 byobu-tmux -2 send-keys "roscore" C-m
 byobu-tmux select-pane -t 2
 byobu-tmux -2 send-keys "export ROS_MASTER_URI=http://$nodeip_02:11311" C-m
