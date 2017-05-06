@@ -7,14 +7,14 @@
       <uri>model://willowgarage</uri>
     </include-->
 
-    <!-- <include>
+    <include>
       <uri>model://ground_plane</uri>
-    </include> -->
+    </include>
 
     <!-- Global light source -->
-<!--     <include>
+    <include>
       <uri>model://sun</uri>
-    </include> -->
+    </include>
 
     <!-- Focus camera on tall pendulum -->
     <gui fullscreen='0'>
