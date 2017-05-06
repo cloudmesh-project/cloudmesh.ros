@@ -20,11 +20,11 @@ ssh -o StrictHostKeyChecking=no cc@$node_ip03 hostname
 
 rm ~/inventoryInter.txt
 
-#add the ROS repo key to each machine
-#this started failing in the Ansible script at BOM May 2017
-ssh -o StrictHostKeyChecking=no cc@$node_ip01 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-ssh -o StrictHostKeyChecking=no cc@$node_ip02 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-ssh -o StrictHostKeyChecking=no cc@$node_ip03 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+# #add the ROS repo key to each machine
+# #this started failing in the Ansible script at BOM May 2017
+# ssh -o StrictHostKeyChecking=no cc@$node_ip01 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+# ssh -o StrictHostKeyChecking=no cc@$node_ip02 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+# ssh -o StrictHostKeyChecking=no cc@$node_ip03 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 #start the Ansible script
 cd ~/ansibleScript
