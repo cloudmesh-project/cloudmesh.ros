@@ -9,7 +9,7 @@ In order to deploy the virtual swarm, please follow the steps outlined below.
 2. Retrieve the Startup Script
 	Type or paste the follwing command into a terminal in order to retrieve the script to start the cluster creation process:
 
-	wget -P ~ https://raw.githubusercontent.com/cloudmesh/cloudmesh.ros/master/rosProjFinal/begin
+	wget -P ~ https://github.com/cloudmesh/cloudmesh.ros/blob/master/code/begin
 
 3. Make the Startup Script Executable
 	chmod +x ~/begin
